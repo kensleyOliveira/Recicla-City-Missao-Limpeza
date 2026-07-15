@@ -254,10 +254,22 @@ Entregáveis Semanais do Cronograma
 
 | Fase | Temporal | Foco Estratégico | Responsável Técnico | Tarefas Detalhadas do Backlog (Prontas para Execução) |
 | --- | --- | --- | --- | --- |
-| **Semana 1** | Dias 1 a 7 | Validação Analógica e Arquitetura Base | Patrulheiro, Ferreiro, Alquimista, Mago | Montagem de um protótipo físico de papel com tabuleiro e 10 marcadores físicos de lixo para testar o atrito da mochila limitada e o estresse temporal. Configuração inicial do repositório Git (GitHub), criação do projeto em Godot 4 e setup da câmera isométrica fixa. Escrita do script estrutural do mapa lógico (`map_grid.gd`) para gerenciar as coordenadas geográficas de spawn de itens. Desenho dos esquemas visuais estáticos (Mockups) do HUD no Figma para validação de discernibilidade infantil.|
-| **Semana 2** | Dias 8 a 15 | Core Gameplay Digital e Greyboxing | Ferreiro, Alquimista, Mago, Clérigo | Codificação dos scripts de movimentação do `Player_Hero` (toque/clique) e mapeamento da área de colisão por aproximação. Desenvolvimento do sistema lógico do inventário de Array limitado a 10 slots com funções de push e pop. Criação de blocos cinzas tridimensionais (Greyboxing) na engine para testar o tempo de deslocamento do jogador do canto do mapa até a base. Execução de Testes de Fumaça (*Smoke Tests*) para certificar que o estouro do Array (item 11) bloqueia firmemente novas coletas.|
-| **Semana 3** | Dias 16 a 22 | Integração IHC, Storytelling e Assets | Mago, Bardo, Patrulheiro, Ferreiro | Programação visual do HUD na Godot usando nós Control, conectando a `TextureProgressBar` ao sinal do cronômetro. Implementação do Shader de revitalização de bioma e inserção prática dos arquivos de som (.WAV/.MP3) nos gatilhos de eventos. Inserção das caixas de diálogo do tutorial do Robô de Sucata e distribuição espacial equilibrada dos tipos de detritos na fase da Praia. Refatoração da comunicação de nós substituindo chamadas diretas por Signals nativos para limpar o console de erros.|
-| **Semana 4** | Dias 23 a 30 | Playtesting, Balanceamento e Build | Clérigo, Patrulheiro, Ferreiro, Toda a Guilda | Condução de sessões de Playtesting de laboratório com usuários externos usando a metodologia de Observação Passiva (Sem Intervenção). Ajuste das penalidades matemáticas de tempo (de -5s para -8s) com base no feedback dos testes para evitar que o jogo fique fácil demais. Correção de bugs de concorrência de sinais e compilação das builds executáveis estáveis para PC (Windows) e Mobile (Android .APK). Revisão final textual do Game Design Document, tabulação do apêndice de ferramentas e exportação do arquivo PDF definitivo.|
+| **Semana 1** | Dias 1 a 7 | Validação Analógica e Arquitetura Base | Patrulheiro | Montagem de um protótipo físico de papel com tabuleiro e 10 marcadores físicos de lixo para testar o atrito da mochila limitada e o estresse temporal. |
+|  |  |  | Ferreiro | Configuração inicial do repositório Git (GitHub), criação do projeto em Godot 4 e setup da câmera isométrica fixa. |
+|  |  |  | Alquimista | Escrita do script estrutural do mapa lógico (`map_grid.gd`) para gerenciar as coordenadas geográficas de spawn de itens. |
+|  |  |  | Mago | Desenho dos esquemas visuais estáticos (Mockups) do HUD no Figma para validação de discernibilidade infantil. |
+| **Semana 2** | Dias 8 a 15 | Core Gameplay Digital e Greyboxing | Ferreiro | Codificação dos scripts de movimentação do `Player_Hero` (toque/clique) e mapeamento da área de colisão por aproximação. |
+|  |  |  | Alquimista | Desenvolvimento do sistema lógico do inventário de Array limitado a 10 slots com funções de push e pop. |
+|  |  |  | Mago | Criação de blocos cinzas tridimensionais (Greyboxing) na engine para testar o tempo de deslocamento do jogador do canto do mapa até a base. |
+|  |  |  | Clérigo | Execução de Testes de Fumaça (Smoke Tests) para certificar que o estouro do Array (item 11) bloqueia firmemente novas coletas. |
+| **Semana 3** | Dias 16 to 22 | Integração IHC, Storytelling e Assets | Mago | Programação visual do HUD na Godot usando nós Control, conectando a `TextureProgressBar` ao sinal do cronômetro. |
+|  |  |  | Bardo | Implementação do Shader de revitalização de bioma e inserção prática dos arquivos de som (.WAV/.MP3) nos gatilhos de eventos. |
+|  |  |  | Patrulheiro | Inserção das caixas de diálogo do tutorial do Robô de Sucata e distribuição espacial equilibrada dos tipos de detritos na fase da Praia. |
+|  |  |  | Ferreiro | Refatoração da comunicação de nós substituindo chamadas diretas por Signals nativos para limpar o console de erros. |
+| **Semana 4** | Dias 23 a 30 | Playtesting, Balanceamento e Build | Clérigo | Condução de sessões de Playtesting de laboratório com usuários externos usando a metodologia de Observação Passiva (Sem Intervenção). |
+|  |  |  | Patrulheiro | Ajuste das penalidades matemáticas de tempo (de -5s para -8s) com base no feedback dos testes para evitar que o jogo fique fácil demais. |
+|  |  |  | Ferreiro | Correção de bugs de concorrência de sinais e compilação das builds executáveis estáveis para PC (Windows) e Mobile (Android .APK). |
+|  |  |  | Toda a Guilda | Revisão final textual do Game Design Document, tabulação do apêndice de ferramentas e exportação do arquivo PDF definitivo. |
 
 ---
 

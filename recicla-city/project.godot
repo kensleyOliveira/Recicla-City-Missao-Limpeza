@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Recicla_city"
+run/main_scene="uid://ctk5gfpqq2uu0"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SoundManager="*uid://bouwapfy1sfyf"
 
 [display]
 

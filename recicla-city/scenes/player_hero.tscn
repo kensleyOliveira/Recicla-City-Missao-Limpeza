@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://rf6mpcekbvv0"]
+
+[ext_resource type="Script" uid="uid://nw75y1g1rruc" path="res://scripts/player_controller.gd" id="1_bmndj"]
+[ext_resource type="Texture2D" uid="uid://7int01unbdyv" path="res://icon.svg" id="2_f5bow"]
+[ext_resource type="Script" uid="uid://dspr2qjfsu3ih" path="res://scripts/backpack_inventory.gd" id="3_nvpru"]
+
+[node name="Player_hero" type="CharacterBody2D" unique_id=1496982363]
+collision_mask = 2
+script = ExtResource("1_bmndj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2131691010]
+texture = ExtResource("2_f5bow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494135749]
+
+[node name="CollectionArea" type="Area2D" parent="." unique_id=1858504247]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionArea" unique_id=422454148]
+
+[node name="backpack" type="Node" parent="." unique_id=1398752449]
+script = ExtResource("3_nvpru")
+
+[connection signal="body_entered" from="CollectionArea" to="." method="_on_collection_area_body_entered"]
