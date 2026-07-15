@@ -254,14 +254,15 @@ Entregáveis Semanais do Cronograma
 
 | Fase | Temporal | Foco Estratégico | Responsável Técnico | Tarefas Detalhadas do Backlog (Prontas para Execução) |
 | --- | --- | --- | --- | --- |
-| **Semana 1** | Dias 1 a 7 | Validação Analógica e Arquitetura Base | Patrulheiro | Montagem de um protótipo físico de papel com tabuleiro e 10 marcadores físicos de lixo para testar o atrito da mochila limitada e o estresse temporal. |
+| **Semana 1** | Dias 1 a 7 | Validação Analógica e Arquitetura Base | Patrulheiro | [Montagem de um protótipo físico de papel com tabuleiro e 10 marcadores físicos de lixo para testar o atrito da mochila limitada e o estresse temporal](Validacao_analogica_arquitetura_base/Prototipo_fisico.png). |
 |  |  |  | Ferreiro | Configuração inicial do repositório Git (GitHub), criação do projeto em Godot 4 e setup da câmera isométrica fixa. |
 |  |  |  | Alquimista | Escrita do script estrutural do mapa lógico (`map_grid.gd`) para gerenciar as coordenadas geográficas de spawn de itens. |
-|  |  |  | Mago | Desenho dos esquemas visuais estáticos (Mockups) do HUD no Figma para validação de discernibilidade infantil. |
+|  |  |  | Mago | [Desenho dos esquemas visuais estáticos (Mockups) do HUD no Figma para validação de discernibilidade infantil](Validacao_analogica_arquitetura_base/Mockup_Mochila_com_lixos.png). |
 | **Semana 2** | Dias 8 a 15 | Core Gameplay Digital e Greyboxing | Ferreiro | Codificação dos scripts de movimentação do `Player_Hero` (toque/clique) e mapeamento da área de colisão por aproximação. |
 |  |  |  | Alquimista | Desenvolvimento do sistema lógico do inventário de Array limitado a 10 slots com funções de push e pop. |
 |  |  |  | Mago | Criação de blocos cinzas tridimensionais (Greyboxing) na engine para testar o tempo de deslocamento do jogador do canto do mapa até a base. |
-|  |  |  | Clérigo | Execução de Testes de Fumaça (Smoke Tests) para certificar que o estouro do Array (item 11) bloqueia firmemente novas coletas. |
+|  |  |  | Clérigo | [Execução de Testes de Fumaça (Smoke Tests) para certificar que o estouro do Array (item 11) bloqueia firmemente novas coletas.](Imagens/Smoke_test.png) |
+|  |  |  | Report | [Relatório de Desenvolvimento Técnico](Core_Gameplay_Digital_e_Greyboxing/Relatorio_Tecnico_de_Desenvolvimento.docx)
 | **Semana 3** | Dias 16 to 22 | Integração IHC, Storytelling e Assets | Mago | Programação visual do HUD na Godot usando nós Control, conectando a `TextureProgressBar` ao sinal do cronômetro. |
 |  |  |  | Bardo | Implementação do Shader de revitalização de bioma e inserção prática dos arquivos de som (.WAV/.MP3) nos gatilhos de eventos. |
 |  |  |  | Patrulheiro | Inserção das caixas de diálogo do tutorial do Robô de Sucata e distribuição espacial equilibrada dos tipos de detritos na fase da Praia. |
