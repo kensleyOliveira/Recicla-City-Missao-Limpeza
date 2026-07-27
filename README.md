@@ -1,8 +1,3 @@
-Com base no seu progresso de desenvolvimento e no escopo técnico consolidado na transição de tecnologia (HTML5, CSS3, JavaScript puro, Canvas 2D e Web Audio API), o **Game Design Document (GDD)** foi completamente atualizado e reestruturado.
-
-A arquitetura de *Nodes/Signals* do Godot 4 foi removida e substituída por uma arquitetura nativa em JavaScript baseada em **Programação Orientada a Objetos (POO), Máquina de Estados e Loop de Renderização no Canvas**, mantendo os quatro níveis planejados e as quatro categorias clássicas de resíduos.
-
----
 
 # RELATÓRIO TÉCNICO - MISSÃO 2
 
