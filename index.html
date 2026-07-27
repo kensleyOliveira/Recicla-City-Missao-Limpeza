@@ -238,18 +238,24 @@
     .move { font-size: 1.1rem !important; }
     
     /* Move a lixeira/inventário para não conflitar com botões */
-    #inventory {
+   #inventory {
       position: absolute !important;
-      left: 50% !important;
-      bottom: 54px !important; /* Fixado logo acima da barra de mensagens explicativas */
-      transform: translateX(-50%) !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-      z-index: 55 !important;
-      background: rgba(10, 16, 30, 0.95) !important;
+      left: 20px !important;            /* Fixa a mochila na borda esquerda da tela */
+      top: 50% !important;              /* Alinha perfeitamente ao centro vertical */
+      transform: translateY(-50%) !important;
+      bottom: auto !important;
+      margin: 0 !important;
+      
+      flex-direction: column !important; /* A MÁGICA AQUI: transforma os slots em uma coluna vertical */
+      gap: 5px !important;
+      padding: 8px !important;
+      z-index: 65 !important;            /* Garante que fique acima do fundo azul */
+      background: rgba(10, 16, 30, 0.92) !important;
+      border: 2px solid #64748b !important;
+      border-radius: 12px !important;
     }
 
-          #hud {
+    #hud {
     position: absolute;
     inset: 0;
     z-index: 50; /* Aumentado para ficar à frente do canvas */
