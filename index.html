@@ -193,17 +193,16 @@
     #menu .legend { justify-content: center !important; }
     
     .topbar {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 8px;
-      pointer-events: auto; /* Permite clicar no HUD superior */
+      width: 100%;
+      justify-content: space-around !important;
     }
     .panel {
       font-size: 0.7rem !important;
       padding: 4px 6px !important;
     }
-    #progress { width: 120px !important; }
+    #progress {
+      width: 140px !important;
+    }
     
     /* Reposiciona as ações do jogo (pausa, reiniciar) para baixo ou cantos seguros */
     .game-actions {
@@ -240,7 +239,14 @@
     
     /* Move a lixeira/inventário para não conflitar com botões */
     #inventory {
-      margin-top: 40px !important;
+      position: absolute !important;
+      left: 50% !important;
+      bottom: 54px !important; /* Fixado logo acima da barra de mensagens explicativas */
+      transform: translateX(-50%) !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      z-index: 55 !important;
+      background: rgba(10, 16, 30, 0.95) !important;
     }
 
           #hud {
@@ -429,16 +435,31 @@
       o.connect(g);g.connect(ac.destination);
       if(kind==='pick'){
         o.type='sine';o.frequency.setValueAtTime(400,now);o.frequency.exponentialRampToValueAtTime(1200,now+.08);
-        g.gain.setValueAtTime(.15,now);g.gain.linearRampToValueAtTime(.01,now+.08);o.start();o.stop(now+.08);
+        g.gain.setValueAtTime(.45,now); 
+        g.gain.linearRampToValueAtTime(.01,now+.08);o.start();o.stop(now+.08);
       }else if(kind==='good'){
         o.type='triangle';o.frequency.setValueAtTime(600,now);o.frequency.setValueAtTime(900,now+.08);o.frequency.exponentialRampToValueAtTime(1500,now+.2);
-        g.gain.setValueAtTime(.1,now);g.gain.linearRampToValueAtTime(.01,now+.25);o.start();o.stop(now+.25);
+        g.gain.setValueAtTime(.35,now); 
+        g.gain.linearRampToValueAtTime(.01,now+.25);o.start();o.stop(now+.25);
       }else{
         o.type='sawtooth';o.frequency.setValueAtTime(180,now);o.frequency.linearRampToValueAtTime(100,now+.25);
-        g.gain.setValueAtTime(.12,now);g.gain.linearRampToValueAtTime(.01,now+.25);o.start();o.stop(now+.25);
+        g.gain.setValueAtTime(.38,now); // Aumentado de 0.12 para 0.38
+        g.gain.linearRampToValueAtTime(.01,now+.25);o.start();o.stop(now+.25);
       }
     }catch{}
   }
+  function startMusic(lvl){
+    stopMusic();musicStep=0;
+    const songs={1:[261,329,392,329,294,349,440,349],2:[220,277,330,392,330,277,247,330],3:[196,233,294,349,294,233,174,220],4:[246,311,370,415,370,311,277,349]},notes=songs[lvl];
+    const playNote=()=>{try{const ac=audio.ac||(audio.ac=new (AudioContext||webkitAudioContext)()),o=ac.createOscillator(),g=ac.createGain(),now=ac.currentTime;o.connect(g);g.connect(ac.destination);o.type=lvl===4?'sine':lvl===3?'sawtooth':'triangle';o.frequency.setValueAtTime(notes[musicStep++%notes.length],now);
+    g.gain.setValueAtTime(.10,now); 
+    g.gain.exponentialRampToValueAtTime(.001,now+.38);o.start();o.stop(now+.4)}catch{}};
+    playNote();musicTimer=setInterval(playNote,lvl===3?460:lvl===4?650:560);
+  }
+
+  function playUrgencyTick(){try{const ac=audio.ac||(audio.ac=new (AudioContext||webkitAudioContext)()),o=ac.createOscillator(),g=ac.createGain(),now=ac.currentTime,notes=time<=5?[880,1174]:time<=10?[698,880]:[523,659];o.connect(g);g.connect(ac.destination);o.type='square';o.frequency.setValueAtTime(notes[urgencyStep++%2],now);
+  g.gain.setValueAtTime(.12,now); // Aumentado de 0.038 para 0.12 (alerta crítico audível)
+  g.gain.exponentialRampToValueAtTime(.001,now+.065);o.start();o.stop(now+.07)}catch{}}
   function bagAlarm(){if(bagAlarmCooldown>0)return;bagAlarmCooldown=1.8;audio('bad')}
   function stopMusic(){if(musicTimer){clearInterval(musicTimer);musicTimer=null}}
   function startMusic(lvl){
