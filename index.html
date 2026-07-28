@@ -158,136 +158,172 @@
     #campaign-summary h3{margin-bottom:6px;color:#bbf7d0}#campaign-summary table{width:100%;border-collapse:collapse;font-size:.8rem}#campaign-summary th,#campaign-summary td{padding:4px 7px;border-bottom:1px solid #ffffff20;text-align:center}#campaign-summary th:first-child,#campaign-summary td:first-child{text-align:left}#campaign-summary tfoot{font-weight:900;color:#fde68a}
     .intro-loop{max-width:470px;margin:-12px 0 12px;color:#bbf7d0;font-size:.92rem;line-height:1.45;font-weight:650}
     
-    /* Ajustes gerais de responsividade e centralização */
-  @media (max-width: 1150px) or (max-height: 820px) {
-    #game {
-      width: 100vw !important;
-      height: 100vh !important;
-      max-width: 100vw;
-      max-height: 100vh;
-      border: 0 !important;
-      border-radius: 0 !important;
-      aspect-ratio: auto !important;
-    }
-    canvas {
-      object-fit: contain;
-      background: #202842;
-    }
-  }
-
-  /* DETECÇÃO E ROTAÇÃO AUTOMÁTICA PARA CELULAR EM PÉ (PORTRAIT) */
-  @media (max-width: 1150px) or (max-height: 820px) {
-    #game {
-      position: relative; /* Mantém o contexto de posicionamento absoluto correto para os filhos */
-      width: 100vw !important;
-      height: 100vh !important;
-      max-width: 100vw;
-      max-height: 100vh;
-      border: 0 !important;
-      border-radius: 0 !important;
-      aspect-ratio: auto !important;
-    }
-  }
-
-  /* Ajustes específicos para o HUD e botões não sumirem em telas pequenas */
-  @media (max-width: 850px) {
-    #menu {
-      padding: 20px !important;
-      align-items: center !important;
-      text-align: center !important;
-      padding-right: 7% !important;
-      background: linear-gradient(180deg, rgba(3,28,23,.9), rgba(3,28,23,.98)), url('assets/recicla-city-abertura-v2.png') center/cover no-repeat !important;
-    }
-    #menu h1 { text-align: center !important; }
-    #menu .legend { justify-content: center !important; }
-    
-    .topbar {
-      width: 100%;
-      justify-content: space-around !important;
-    }
-    .panel {
-      font-size: 0.7rem !important;
-      padding: 4px 6px !important;
-    }
-    #progress {
-      width: 140px !important;
-    }
-    
-    /* Reposiciona as ações do jogo (pausa, reiniciar) para baixo ou cantos seguros */
-    .game-actions {
-      top: auto !important;
-      bottom: 75px !important;
-      right: 12px !important;
-      flex-direction: row;
-    }
-    .action-btn {
-      min-height: 32px !important;
-      padding: 4px 8px !important;
-      font-size: 0.75rem !important;
+  /* Ajustes gerais de responsividade e centralização */
+    @media (max-width: 1150px) or (max-height: 820px) {
+      #game {
+        position: relative;
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: 100vw;
+        max-height: 100vh;
+        border: 0 !important;
+        border-radius: 0 !important;
+        aspect-ratio: auto !important;
+      }
+      canvas {
+        object-fit: contain;
+        background: #202842;
+      }
     }
 
-    /* Tabela de resumo da campanha da fase 4 */
-    #campaign-summary {
-      width: 95vw !important;
-      max-height: 160px;
-      overflow-y: auto;
-    }
-    #campaign-summary table {
-      font-size: 0.7rem !important;
-    }
+    /* Ajustes específicos para o HUD e telas em celulares/telas pequenas */
+    @media (max-width: 850px) {
+      /* Reduz títulos e paddings de todas as telas sobrepostas */
+      .screen {
+        padding: 12px !important;
+      }
+      h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 8px !important;
+      }
+      .subtitle {
+        font-size: 0.8rem !important;
+        margin-bottom: 12px !important;
+      }
 
-    /* Reposicionamento do D-Pad de controle analógico na tela */
-    #controls {
-      right: 10px !important;
-      bottom: 10px !important;
-      grid-template-columns: repeat(3, 42px) !important;
-      grid-template-rows: repeat(2, 42px) !important;
-      gap: 3px !important;
-    }
-    .move { font-size: 1.1rem !important; }
-    
-    /* Move a lixeira/inventário para não conflitar com botões */
-   #inventory {
-      position: absolute !important;
-      left: 20px !important;            /* Fixa a mochila na borda esquerda da tela */
-      top: 50% !important;              /* Alinha perfeitamente ao centro vertical */
-      transform: translateY(-50%) !important;
-      bottom: auto !important;
-      margin: 0 !important;
+      /* Compactação da caixa do Tutorial */
+      .tutorial-card {
+        padding: 12px !important;
+        max-height: 96vh !important;
+      }
+      .tutorial-card h2 {
+        margin-bottom: 2px !important;
+      }
+      .tutorial-card .phase-name {
+        margin-bottom: 8px !important;
+        font-size: 0.9rem !important;
+      }
+      .tutorial-visual {
+        height: 65px !important;
+        margin: 6px 0 !important;
+        padding: 6px !important;
+        font-size: 1.3rem !important;
+      }
+      .tutorial-step b {
+        min-height: 28px !important;
+        font-size: 1.3rem !important;
+      }
+      .tutorial-step span {
+        font-size: 0.55rem !important;
+      }
+      .tutorial-card ul {
+        margin: 0 0 12px 16px !important;
+        line-height: 1.3 !important;
+        font-size: 0.75rem !important;
+      }
+      .tutorial-card li + li {
+        margin-top: 3px !important;
+      }
+
+      /* Redução e posicionamento dos botões das telas */
+      .btn {
+        padding: 6px 16px !important;
+        font-size: 0.85rem !important;
+      }
+
+      #menu {
+        padding: 20px !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-right: 7% !important;
+        background: linear-gradient(180deg, rgba(3,28,23,.9), rgba(3,28,23,.98)), url('assets/recicla-city-abertura-v2.png') center/cover no-repeat !important;
+      }
+      #menu h1 { text-align: center !important; }
+      #menu .legend { justify-content: center !important; }
       
-      flex-direction: column !important; /* A MÁGICA AQUI: transforma os slots em uma coluna vertical */
-      gap: 5px !important;
-      padding: 8px !important;
-      z-index: 65 !important;            /* Garante que fique acima do fundo azul */
-      background: rgba(10, 16, 30, 0.92) !important;
-      border: 2px solid #64748b !important;
-      border-radius: 12px !important;
+      .topbar {
+        width: 100%;
+        justify-content: space-around !important;
+      }
+      .panel {
+        font-size: 0.7rem !important;
+        padding: 4px 6px !important;
+      }
+      #progress {
+        width: 140px !important;
+      }
+      
+      .game-actions {
+        top: auto !important;
+        bottom: 75px !important;
+        right: 12px !important;
+        flex-direction: row;
+      }
+      .action-btn {
+        min-height: 32px !important;
+        padding: 4px 8px !important;
+        font-size: 0.75rem !important;
+      }
+
+      #campaign-summary {
+        width: 95vw !important;
+        max-height: 160px;
+        overflow-y: auto;
+      }
+      #campaign-summary table {
+        font-size: 0.7rem !important;
+      }
+
+      #controls {
+        right: 10px !important;
+        bottom: 10px !important;
+        grid-template-columns: repeat(3, 42px) !important;
+        grid-template-rows: repeat(2, 42px) !important;
+        gap: 3px !important;
+      }
+      .move { font-size: 1.1rem !important; }
+      
+      #inventory {
+        position: absolute !important;
+        left: 20px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        bottom: auto !important;
+        margin: 0 !important;
+        flex-direction: column !important;
+        gap: 5px !important;
+        padding: 8px !important;
+        z-index: 65 !important;
+        background: rgba(10, 16, 30, 0.92) !important;
+        border: 2px solid #64748b !important;
+        border-radius: 12px !important;
+      }
+
+      #hud {
+        position: absolute;
+        inset: 0;
+        z-index: 50;
+        pointer-events: none;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
     }
 
-    #hud {
-    position: absolute;
-    inset: 0;
-    z-index: 50; /* Aumentado para ficar à frente do canvas */
-    pointer-events: none;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  #controls {
-    position: absolute;
-    right: 14px;
-    bottom: 15px;
-    z-index: 60; /* Garantir que fique acima de tudo para receber os cliques */
-    display: grid;
-    grid-template-columns: repeat(3, 52px);
-    grid-template-rows: repeat(3, 52px);
-    gap: 4px;
-  }
-
-
-  }  
+    /* MINI-COMPACTAÇÃO ADICIONAL PARA CELULARES MUITO BAIXOS EM HORIZONTAL */
+    @media (max-height: 480px) and (max-width: 950px) {
+      .tutorial-visual {
+        display: none !important; 
+      }
+      .tutorial-card ul {
+        font-size: 0.7rem !important;
+        margin-bottom: 8px !important;
+      }
+      h2 {
+        font-size: 1.05rem !important;
+      }
+    }
   </style>
 </head>
 <body>
