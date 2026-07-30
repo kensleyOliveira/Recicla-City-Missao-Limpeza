@@ -1,0 +1,26 @@
+RECICLA CITY: MISSÃO LIMPEZA
+
+COMO EXECUTAR NO macOS
+1. Descompacte o arquivo ZIP.
+2. Clique duas vezes em "Jogar Recicla City.command".
+3. Se o macOS pedir confirmação, clique com o botão direito no arquivo, escolha Abrir e confirme.
+
+ALTERNATIVA
+Abra o arquivo index.html diretamente em Chrome, Safari, Edge ou Firefox.
+
+CONTROLES
+- Mouse: clique no chão para caminhar; clique numa lixeira para aproximar e depositar
+- Setas ou WASD: movimento
+- Botões na tela: movimento em celulares e tablets
+- Reiniciar: reinicia a fase com confirmação
+- Sair: retorna à seleção de fases com confirmação
+- Pausar/Continuar: botão no HUD ou tecla Esc
+
+RECURSOS
+- Tutorial ilustrado antes de cada fase
+- Música diferente em cada cenário
+- Mochila expansível na fase 3
+- Vento dinâmico e aceleração com ritmo sonoro
+- Quatro categorias clássicas: papel, plástico, vidro e metal/latas
+
+O jogo não precisa de internet nem instalação.
