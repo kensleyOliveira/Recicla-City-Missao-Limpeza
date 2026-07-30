@@ -22,6 +22,8 @@
 
 * **Data:** Julho de 2026
 
+* **Link:** https://recicla-city-missao-limpeza.vercel.app/
+
 ---
 
 ## **A. Visão Geral e Metas de Experiência**
